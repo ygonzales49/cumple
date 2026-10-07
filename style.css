@@ -1,0 +1,169 @@
+:root{
+    --noche: #231a4d;
+    --noche-oscuro: #130f2e;
+    --mantequilla: #ffe27a;
+    --rosa: #ff7eb6;
+    --menta: #7ef0d2;
+    --texto: #fdf9ff;
+    --fondo: #7ef0d2;
+    --fondo-oscuro:#498373;
+    --titulo:#f4cc3b;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow-x: hidden;
+    font-family: "Fredoka", system-ui, sans-serif;
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+    line-height: 1.5;
+    color: var(--texto);
+    background: linear-gradient(170deg, var(--fondo), var(--fondo-oscuro));
+}
+
+main{
+    width: 100%;
+    max-width: 44rem;
+    padding: 3rem 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+}
+
+h1{
+    margin: 0;
+    font-size: clamp(2.25rem, 1.5rem + 4vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--noche);
+}
+
+h2{
+    margin: 0 0 0.25rem;
+    font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+    font-weight: 600;
+    color: var(--mantequilla);
+}
+
+p{
+    margin: 0;
+}
+
+.invitacion{
+    margin-top: 0.75rem;
+    font-size: 1.15em;
+}
+
+.subtitulo{
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+/* Contador: cada número lleva orejas de gatito */
+.c-container{
+    display: flex;
+    justify-content: center;
+    gap: clamp(0.6rem, 2.5vw, 1.5rem);
+}
+
+.c-number{
+    position: relative;
+    min-width: 3.25rem;
+    padding: 0.75rem 0.5rem;
+    border-radius: 1rem;
+    background: var(--mantequilla);
+    color: var(--noche);
+    font-size: clamp(1.5rem, 1rem + 3vw, 2.75rem);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.1;
+}
+
+.c-number::before,
+.c-number::after{
+    content: "";
+    position: absolute;
+    top: -0.55rem;
+    width: 1.1rem;
+    height: 1.1rem;
+    background: var(--mantequilla);
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+
+.c-number::before{
+    left: 0.45rem;
+    transform: rotate(-12deg);
+}
+
+.c-number::after{
+    right: 0.45rem;
+    transform: rotate(12deg);
+}
+
+.c-text{
+    margin-top: 0.5rem;
+    font-size: 0.85em;
+    color: var(--menta);
+}
+
+/* Botón */
+.btn{
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.9rem 1.75rem;
+    border-radius: 999px;
+    background: var(--menta);
+    color: var(--noche);
+    text-decoration: none;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn:hover{
+    background: var(--rosa);
+    transform: translateY(-2px);
+}
+
+.btn:focus-visible,
+footer a:focus-visible{
+    outline: 3px solid var(--mantequilla);
+    outline-offset: 4px;
+}
+
+.btn-titulo{
+    font-size: 1.15em;
+    font-weight: 600;
+}
+
+.btn-nota{
+    font-size: 0.85em;
+}
+
+footer{
+    padding: 1.5rem 1.25rem 2rem;
+    font-size: 0.85em;
+    opacity: 0.85;
+}
+
+footer a{
+    color: var(--menta);
+}
+
+@media (prefers-reduced-motion: reduce){
+    .btn{
+        transition: none;
+    }
+    .btn:hover{
+        transform: none;
+    }
+}
